@@ -1,0 +1,198 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "fitness geek",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "HelloWorldIntent",
+                  "slots": [],
+                  "samples": [
+                      "hello",
+                      "how are you",
+                      "say hi world",
+                      "say hi",
+                      "hi",
+                      "say hello world",
+                      "say hello"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.FallbackIntent",
+                  "samples": []
+              },
+              {
+                  "name": "PersonalTrainerIntent",
+                  "slots": [],
+                  "samples": [
+                      "personal excersise",
+                      "gym trainer",
+                      "trainer",
+                      "personal training",
+                      "training",
+                      "trainer service",
+                      "personal trainer ",
+                      "personal trainer program"
+                  ]
+              },
+              {
+                  "name": "TrainerCallbackIntent",
+                  "slots": [
+                      {
+                          "name": "callbackPhoneNumber",
+                          "type": "AMAZON.PhoneNumber",
+                          "samples": [
+                              "{callbackPhoneNumber}",
+                              "its {callbackPhoneNumber}",
+                              "sure its {callbackPhoneNumber}"
+                          ]
+                      }
+                  ],
+                  "samples": [
+                      "speak with a trainer",
+                      "speak with someone",
+                      "can you give me someone to call me",
+                      "tell someone to call me",
+                      "can you tell me someone to call me",
+                      "give me someone to call me",
+                      "can you get me someone to call me",
+                      "get me someone to call me",
+                      "connect me with an agent",
+                      "a personal trainer",
+                      "get me an agent",
+                      "agent call me back",
+                      "coach call me",
+                      "then call me",
+                      "please call me back",
+                      "i need a call back",
+                      "agent call me",
+                      "personal trainer call",
+                      "get someone to call me",
+                      "trainer call me back",
+                      "please call me"
+                  ]
+              },
+              {
+                  "name": "ChatWithTrainerIntent",
+                  "slots": [
+                      {
+                          "name": "chatPhoneNumber",
+                          "type": "AMAZON.PhoneNumber",
+                          "samples": [
+                              "its {chatPhoneNumber}",
+                              "{chatPhoneNumber}",
+                              "sure its {chatPhoneNumber}"
+                          ]
+                      }
+                  ],
+                  "samples": [
+                      "chat with a trainer",
+                      "chat with a coach",
+                      "start a chat",
+                      "start a chat now",
+                      "text with agent",
+                      "text with trainer",
+                      "IM with trainer",
+                      "imessage",
+                      "IM",
+                      "chat with trainer",
+                      "start chat"
+                  ]
+              }
+          ],
+          "types": []
+      },
+      "dialog": {
+          "intents": [
+              {
+                  "name": "ChatWithTrainerIntent",
+                  "confirmationRequired": false,
+                  "prompts": {},
+                  "slots": [
+                      {
+                          "name": "chatPhoneNumber",
+                          "type": "AMAZON.PhoneNumber",
+                          "confirmationRequired": true,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "confirmation": "Confirm.Slot.1266594820288.1169953314448",
+                              "elicitation": "Elicit.Slot.1266594820288.1169953314448"
+                          }
+                      }
+                  ]
+              },
+              {
+                  "name": "TrainerCallbackIntent",
+                  "confirmationRequired": false,
+                  "prompts": {},
+                  "slots": [
+                      {
+                          "name": "callbackPhoneNumber",
+                          "type": "AMAZON.PhoneNumber",
+                          "confirmationRequired": true,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "confirmation": "Confirm.Slot.745381897102.240002701541",
+                              "elicitation": "Elicit.Slot.745381897102.240002701541"
+                          }
+                      }
+                  ]
+              }
+          ],
+          "delegationStrategy": "ALWAYS"
+      },
+      "prompts": [
+          {
+              "id": "Confirm.Slot.1266594820288.1169953314448",
+              "variations": [
+                  {
+                      "type": "SSML",
+                      "value": "<speak>I got <say-as interpret-as=\"telephone\"> {chatPhoneNumber} </say-as> Is this correct?</speak>"
+                  }
+              ]
+          },
+          {
+              "id": "Elicit.Slot.1266594820288.1169953314448",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "Please tell me your phone number to send text message to start chat."
+                  }
+              ]
+          },
+          {
+              "id": "Elicit.Slot.745381897102.240002701541",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "Please tell me the phone number you would like us to callback on."
+                  }
+              ]
+          },
+          {
+              "id": "Confirm.Slot.745381897102.240002701541",
+              "variations": [
+                  {
+                      "type": "SSML",
+                      "value": "<speak>I got <say-as interpret-as=\"telephone\"> {callbackPhoneNumber} </say-as> Is this correct?</speak>"
+                  }
+              ]
+          }
+      ]
+  }
+}

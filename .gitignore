@@ -2,7 +2,6 @@
 *.d.ts
 node_modules
 .DS_Store
-package-lock.json
 
 # CDK asset staging directory
 .cdk.staging

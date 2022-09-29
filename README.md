@@ -22,13 +22,14 @@
     3.	InstanceID: this is your Amazon Connect instance ID.
     4.	QueueID: this is your BasicQueue ID.
 11.	Install dependencies in project directory:
-    1. cd connectAlexa
+    1. cd amazon-connect-alexa-skill-integration
     2. npm install
-    3. cd connectAlexa/src/layers/ask-sdk-core/nodejs
+    3. cd src/layers/ask-sdk-core/nodejs
     4. npm install
     5. cd ../../../../
-    6. cd connectAlexa/src/layers/aws-sdk/nodejs
+    6. cd src/layers/aws-sdk/nodejs
     7. npm install
+    8. cd ../../../../
 12.	Bootstrap your AWS account for CDK: npx cdk bootstrap aws://<your_AWS_account>/<your_AWS_region>
 13.	Synthesize your project: npx cdk synth
 14.	Deploy your project: npx cdk deploy

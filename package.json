@@ -14,7 +14,7 @@
     "@aws-cdk/assert": "1.203.0",
     "@types/jest": "26.0.23",
     "@types/node": "15.12.4",
-    "ask-cli": "2.28.0",
+    "ask-cli": "2.30.7",
     "aws-cdk": "1.175.0",
     "jest": "29.7.0",
     "module-alias": "2.2.2",
